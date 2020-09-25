@@ -119,4 +119,8 @@ app.post('/insert', (req,res)=> {
                 
                 });
 
-app.listen(8000)
+                var port =process.env.PORT||4000;
+
+app.listen(port,()=>{
+  console.log("app listining on port"+port);
+});
