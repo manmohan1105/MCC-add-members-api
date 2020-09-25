@@ -60,7 +60,7 @@ app.post('/insert', (req,res)=> {
  
 		
  
-	  	//  if(file.mimetype == "image/jpeg" ||file.mimetype == "image/png"||file.mimetype == "image/gif" ){
+	  	 if(file.mimetype == "image/jpeg" ||file.mimetype == "image/png"||file.mimetype == "image/gif" ){
                                  
               file.mv('public/images/upload_images/'+file.name, function(err) {
                              
@@ -90,11 +90,11 @@ app.post('/insert', (req,res)=> {
     						});
              });
             });
-          // } 
-          // else {
-          //   message = "This format is not allowed , please upload file with '.png','.gif','.jpg'";
-          //   res.render('index.js',{message: message});
-          // }
+          } 
+          else {
+            message = "This format is not allowed , please upload file with '.png','.gif','.jpg'";
+            res.render('index.js',{message: message});
+          }
           
         
         });
