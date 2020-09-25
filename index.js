@@ -42,6 +42,25 @@ app.use(fileUpload({
 // development only
  
 // app.get('/', routes.index);//call for main index page
+
+
+
+app.get('/fetch', (req,res)=> {
+
+  var sql = "select* from form";
+ 
+  var query = db.query(sql, function(err, result) {
+          if (err) {
+             return res.status(500).send(err);
+         }
+          res.send(result);
+                  
+                  
+  });
+
+
+        
+        });
 app.post('/insert', (req,res)=> {
 
 	var post  = req.body;
@@ -103,22 +122,22 @@ app.post('/insert', (req,res)=> {
 
 
 
-        app.get('/fetch', (req,res)=> {
+        // app.get('/fetch', (req,res)=> {
 
-          var sql = "select* from form";
+        //   var sql = "select* from form";
          
-          var query = db.query(sql, function(err, result) {
-                  if (err) {
-                     return res.status(500).send(err);
-                 }
-                  res.send(result);
+        //   var query = db.query(sql, function(err, result) {
+        //           if (err) {
+        //              return res.status(500).send(err);
+        //          }
+        //           res.send(result);
                           
                           
-          });
+        //   });
 
        
                 
-                });
+        //         });
 
                 var port =process.env.PORT||4000;
 
